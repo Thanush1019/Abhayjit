@@ -2,47 +2,35 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { BarChart3, ShieldCheck, TrendingUp } from 'lucide-react'
-
-const services = [
-  {
-    icon: BarChart3,
-    title: 'Financial Analysis',
-    description: 'Comprehensive financial analysis and reporting to help you make informed business decisions.',
-    features: [
-      'Financial Statement Analysis',
-      'Budgeting & Forecasting',
-      'Performance Metrics',
-      'Investment Analysis'
-    ]
-  },
-  {
-    icon: ShieldCheck,
-    title: 'Risk Management',
-    description: 'Strategic risk assessment and management solutions to protect your business interests.',
-    features: [
-      'Risk Assessment',
-      'Compliance Management',
-      'Internal Controls',
-      'Audit Support'
-    ]
-  },
-  {
-    icon: TrendingUp,
-    title: 'Business Development',
-    description: 'Strategic guidance and solutions to drive sustainable business growth.',
-    features: [
-      'Growth Strategy',
-      'Market Analysis',
-      'Business Planning',
-      'Performance Optimization'
-    ]
-  }
-]
+import { Calculator, TrendingUp, LineChart } from 'lucide-react'
 
 const Services = () => {
+  const services = [
+    {
+      title: 'Financial Analysis',
+      description: 'Comprehensive financial analysis and reporting to help you make informed business decisions.',
+      icon: Calculator,
+      color: 'text-brand-primary',
+    },
+    {
+      title: 'Risk Management',
+      description: 'Strategic risk assessment and mitigation strategies to protect your business interests.',
+      icon: LineChart,
+      color: 'text-brand-secondary',
+    },
+    {
+      title: 'Business Development',
+      description: 'Expert guidance on business growth, market expansion, and strategic planning.',
+      icon: TrendingUp,
+      color: 'text-brand-tertiary',
+    },
+  ]
+
   return (
-    <section id="services" className="py-20 bg-slate-50">
+    <section id="services" className="py-20 bg-white relative">
+      {/* Simple accent line */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-secondary via-brand-tertiary to-brand-secondary" />
+
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -51,10 +39,10 @@ const Services = () => {
           transition={{ duration: 0.5 }}
           className="max-w-3xl mx-auto text-center mb-16"
         >
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">Services</h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto mb-8" />
-          <p className="text-lg text-slate-600">
-            Comprehensive financial services tailored to your business needs
+          <h2 className="text-4xl font-bold text-brand-dark mb-4">Services</h2>
+          <div className="w-24 h-1 bg-brand-secondary mx-auto mb-8 rounded-full" />
+          <p className="text-xl text-brand-slate">
+            Providing comprehensive financial solutions tailored to your business needs
           </p>
         </motion.div>
 
@@ -66,22 +54,14 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2, duration: 0.5 }}
-              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+              className="group"
             >
-              <div className="p-8">
-                <div className="w-12 h-12 bg-blue-600 text-white rounded-lg flex items-center justify-center mb-6">
-                  <service.icon className="w-6 h-6" />
+              <div className="p-8 bg-brand-light rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                <div className={`inline-flex p-4 rounded-xl bg-white mb-6 ${service.color} group-hover:scale-110 transition-transform duration-300`}>
+                  <service.icon className="w-8 h-8" />
                 </div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-4">{service.title}</h3>
-                <p className="text-slate-600 mb-6">{service.description}</p>
-                <ul className="space-y-3">
-                  {service.features.map((feature) => (
-                    <li key={feature} className="flex items-center text-slate-700">
-                      <span className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+                <h3 className={`text-2xl font-semibold mb-4 ${service.color}`}>{service.title}</h3>
+                <p className="text-lg text-brand-slate">{service.description}</p>
               </div>
             </motion.div>
           ))}

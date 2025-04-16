@@ -32,7 +32,7 @@ const Contact = () => {
   }
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-20 bg-gradient-to-br from-brand-light via-white to-brand-primary/5">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -41,9 +41,9 @@ const Contact = () => {
           transition={{ duration: 0.5 }}
           className="max-w-3xl mx-auto text-center mb-16"
         >
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">Get in Touch</h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto mb-8" />
-          <p className="text-lg text-slate-600">
+          <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-tertiary mb-4">Get in Touch</h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-tertiary mx-auto mb-8 rounded-full" />
+          <p className="text-lg text-brand-slate">
             Let's discuss how I can help your business achieve its financial goals
           </p>
         </motion.div>
@@ -57,41 +57,56 @@ const Contact = () => {
             transition={{ duration: 0.5 }}
             className="space-y-8"
           >
-            <div className="bg-slate-50 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-slate-900 mb-6">Contact Information</h3>
+            <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+              <h3 className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary mb-6">Contact Information</h3>
               <div className="space-y-4">
                 <a
                   href="mailto:contact@abhayjit.com"
-                  className="flex items-center text-slate-600 hover:text-blue-600 transition-colors"
+                  className="flex items-center text-brand-slate hover:text-brand-primary transition-all duration-300 group"
                 >
-                  <Mail className="w-5 h-5 mr-3" />
-                  contact@abhayjit.com
+                  <div className="w-10 h-10 bg-gradient-to-br from-brand-primary to-brand-primary/80 rounded-lg flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                    <Mail className="w-5 h-5 text-white" />
+                  </div>
+                  <span className="group-hover:translate-x-1 transition-transform duration-300">contact@abhayjit.com</span>
                 </a>
                 <a
                   href="tel:+1234567890"
-                  className="flex items-center text-slate-600 hover:text-blue-600 transition-colors"
+                  className="flex items-center text-brand-slate hover:text-brand-secondary transition-all duration-300 group"
                 >
-                  <Phone className="w-5 h-5 mr-3" />
-                  +1 (234) 567-890
+                  <div className="w-10 h-10 bg-gradient-to-br from-brand-secondary to-brand-secondary/80 rounded-lg flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                    <Phone className="w-5 h-5 text-white" />
+                  </div>
+                  <span className="group-hover:translate-x-1 transition-transform duration-300">+1 (234) 567-890</span>
                 </a>
                 <a
                   href="https://www.linkedin.com/in/abhayjit-singh"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center text-slate-600 hover:text-blue-600 transition-colors"
+                  className="flex items-center text-brand-slate hover:text-brand-tertiary transition-all duration-300 group"
                 >
-                  <Linkedin className="w-5 h-5 mr-3" />
-                  LinkedIn Profile
+                  <div className="w-10 h-10 bg-gradient-to-br from-brand-tertiary to-brand-tertiary/80 rounded-lg flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                    <Linkedin className="w-5 h-5 text-white" />
+                  </div>
+                  <span className="group-hover:translate-x-1 transition-transform duration-300">LinkedIn Profile</span>
                 </a>
               </div>
             </div>
 
-            <div className="bg-slate-50 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-slate-900 mb-4">Office Hours</h3>
-              <div className="space-y-2 text-slate-600">
-                <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                <p>Saturday: By Appointment</p>
-                <p>Sunday: Closed</p>
+            <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+              <h3 className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary mb-4">Office Hours</h3>
+              <div className="space-y-3 text-brand-slate">
+                <p className="flex items-center">
+                  <span className="w-2 h-2 bg-gradient-to-r from-brand-primary to-brand-primary/80 rounded-full mr-3" />
+                  Monday - Friday: 9:00 AM - 6:00 PM
+                </p>
+                <p className="flex items-center">
+                  <span className="w-2 h-2 bg-gradient-to-r from-brand-secondary to-brand-secondary/80 rounded-full mr-3" />
+                  Saturday: By Appointment
+                </p>
+                <p className="flex items-center">
+                  <span className="w-2 h-2 bg-gradient-to-r from-brand-tertiary to-brand-tertiary/80 rounded-full mr-3" />
+                  Sunday: Closed
+                </p>
               </div>
             </div>
           </motion.div>
@@ -103,9 +118,9 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-brand-charcoal mb-2">
                   Name
                 </label>
                 <input
@@ -114,12 +129,12 @@ const Contact = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-all duration-300 bg-white/50"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-brand-charcoal mb-2">
                   Email
                 </label>
                 <input
@@ -128,12 +143,12 @@ const Contact = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-secondary focus:border-transparent transition-all duration-300 bg-white/50"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-brand-charcoal mb-2">
                   Message
                 </label>
                 <textarea
@@ -142,13 +157,13 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows={4}
-                  className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-brand-light rounded-xl focus:ring-2 focus:ring-brand-tertiary focus:border-transparent transition-all duration-300 bg-white/50"
                   required
                 />
               </div>
               <button
                 type="submit"
-                className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors"
+                className="w-full bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-tertiary text-white py-3 rounded-xl hover:opacity-90 transition-all duration-300 transform hover:scale-[1.02] focus:ring-2 focus:ring-brand-primary focus:ring-offset-2"
               >
                 Send Message
               </button>

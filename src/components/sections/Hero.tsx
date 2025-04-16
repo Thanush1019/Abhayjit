@@ -6,9 +6,12 @@ import Image from 'next/image'
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen relative overflow-hidden bg-gradient-to-b from-slate-900 to-slate-800">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:60px_60px]" />
+    <section id="home" className="min-h-screen relative overflow-hidden bg-gradient-to-b from-brand-dark to-brand-primary/90">
+      {/* Simple grid overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:44px_44px]" />
+      
+      {/* Simple accent line */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-secondary via-brand-tertiary to-brand-secondary" />
       
       <div className="relative container mx-auto px-4 py-24 sm:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -25,10 +28,10 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
             >
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-                Abhayjit Singh
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6">
+                Abhayjit <span className="text-brand-secondary">Singh</span>
               </h1>
-              <h2 className="text-xl sm:text-2xl text-blue-400 mb-8">
+              <h2 className="text-xl sm:text-2xl text-brand-tertiary mb-8 font-light tracking-wide">
                 Chartered Accountant
               </h2>
             </motion.div>
@@ -37,7 +40,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.5 }}
-              className="text-lg text-slate-300 mb-8 max-w-2xl mx-auto lg:mx-0"
+              className="text-xl text-white/90 mb-12 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
             >
               Specialized in Financial Analysis, Risk Management, and Strategic Business Development
             </motion.p>
@@ -46,17 +49,17 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.5 }}
-              className="space-x-4"
+              className="space-x-6"
             >
               <a
                 href="#contact"
-                className="inline-block px-8 py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition-colors"
+                className="inline-block px-8 py-4 bg-brand-secondary text-brand-dark font-semibold rounded-lg hover:bg-brand-secondary/90 transition-all duration-300 shadow-lg hover:shadow-brand-secondary/25 transform hover:-translate-y-1"
               >
                 Get in Touch
               </a>
               <a
                 href="#services"
-                className="inline-block px-8 py-3 border-2 border-blue-400 text-blue-400 font-semibold rounded-md hover:bg-blue-400/10 transition-colors"
+                className="inline-block px-8 py-4 border-2 border-brand-tertiary text-brand-tertiary font-semibold rounded-lg hover:bg-brand-tertiary/10 transition-all duration-300 transform hover:-translate-y-1"
               >
                 View Services
               </a>
@@ -71,28 +74,23 @@ const Hero = () => {
             className="relative w-full max-w-lg mx-auto order-1 lg:order-2"
           >
             <div className="aspect-square relative">
-              {/* Square container with gradient border */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600 p-1">
-                <div className="absolute inset-0 bg-slate-900"></div>
-              </div>
+              {/* Simple border */}
+              <div className="absolute inset-0 border-2 border-brand-secondary rounded-2xl transform rotate-3"></div>
+              <div className="absolute inset-0 border-2 border-brand-tertiary rounded-2xl transform -rotate-3"></div>
               
               {/* Main image container */}
-              <div className="relative w-full h-full overflow-hidden">
+              <div className="relative w-full h-full overflow-hidden rounded-2xl">
                 <Image
                   src="/images/Photo 2.jpeg"
                   alt="Abhayjit Singh"
                   fill
-                  className="object-cover object-center"
+                  className="object-cover object-center transform hover:scale-105 transition-transform duration-700"
                   priority
                   sizes="(max-width: 768px) 80vw, (max-width: 1200px) 40vw, 33vw"
                 />
-                {/* Overlay gradient */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/30 to-transparent" />
+                {/* Simple overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/30 to-transparent" />
               </div>
-
-              {/* Decorative elements */}
-              <div className="absolute -inset-4 bg-blue-500/20 blur-xl -z-10" />
-              <div className="absolute inset-0 bg-blue-500/10 translate-x-2 translate-y-2 -z-10" />
             </div>
           </motion.div>
         </div>
