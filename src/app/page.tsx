@@ -9,7 +9,7 @@ const Contact = dynamic(() => import('@/components/sections/Contact'))
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main>
       <Hero />
       <About />
       <Services />

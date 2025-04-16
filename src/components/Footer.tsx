@@ -1,0 +1,150 @@
+'use client'
+
+import React from 'react'
+import { motion } from 'framer-motion'
+import { FaLinkedinIn, FaTwitter, FaEnvelope } from 'react-icons/fa'
+
+const Footer = () => {
+  const currentYear = new Date().getFullYear()
+
+  const socialLinks = [
+    { name: 'LinkedIn', href: '#', icon: FaLinkedinIn },
+    { name: 'Twitter', href: '#', icon: FaTwitter },
+    { name: 'Email', href: 'mailto:contact@example.com', icon: FaEnvelope }
+  ]
+
+  const quickLinks = [
+    { name: 'Home', href: '#home' },
+    { name: 'About', href: '#about' },
+    { name: 'Services', href: '#services' },
+    { name: 'Contact', href: '#contact' }
+  ]
+
+  return (
+    <footer className="relative z-10 bg-slate-900 text-slate-300 pb-24">
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 to-slate-950" />
+      
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]" />
+      
+      <div className="container mx-auto px-4 py-12 relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Brand Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="space-y-4"
+          >
+            <h3 className="text-2xl font-bold text-white">Abhayjit Singh</h3>
+            <p className="text-sm text-slate-400 leading-relaxed">
+              Professional Chartered Accountant specializing in financial analysis, 
+              risk management, and strategic business development.
+            </p>
+          </motion.div>
+
+          {/* Quick Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="space-y-4"
+          >
+            <h4 className="text-lg font-semibold text-white">Quick Links</h4>
+            <ul className="space-y-2">
+              {quickLinks.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    className="text-slate-400 hover:text-blue-400 transition-colors flex items-center space-x-2 group"
+                  >
+                    <span className="h-1.5 w-1.5 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <span>{link.name}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Contact Info */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="space-y-4"
+          >
+            <h4 className="text-lg font-semibold text-white">Contact</h4>
+            <ul className="space-y-3 text-slate-400">
+              <li className="flex items-center space-x-2">
+                <span className="w-5 h-5 rounded-full bg-blue-500/10 flex items-center justify-center">
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                </span>
+                <span>Mumbai, India</span>
+              </li>
+              <li>
+                <a href="tel:+1234567890" className="hover:text-blue-400 transition-colors flex items-center space-x-2 group">
+                  <span className="w-5 h-5 rounded-full bg-blue-500/10 flex items-center justify-center group-hover:bg-blue-500/20">
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                  </span>
+                  <span>+91 1234567890</span>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:contact@example.com" className="hover:text-blue-400 transition-colors flex items-center space-x-2 group">
+                  <span className="w-5 h-5 rounded-full bg-blue-500/10 flex items-center justify-center group-hover:bg-blue-500/20">
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                  </span>
+                  <span>contact@example.com</span>
+                </a>
+              </li>
+            </ul>
+          </motion.div>
+
+          {/* Social Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="space-y-4"
+          >
+            <h4 className="text-lg font-semibold text-white">Connect</h4>
+            <div className="flex space-x-4">
+              {socialLinks.map((link) => {
+                const Icon = link.icon
+                return (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-slate-400 hover:bg-blue-500 hover:text-white transition-all duration-300"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={link.name}
+                  >
+                    <Icon className="w-5 h-5" />
+                  </a>
+                )
+              })}
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Copyright */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="border-t border-slate-800 mt-12 pt-8 text-center text-sm text-slate-400"
+        >
+          <p>© {currentYear} Abhayjit Singh. All rights reserved.</p>
+        </motion.div>
+      </div>
+    </footer>
+  )
+}
+
+export default Footer 

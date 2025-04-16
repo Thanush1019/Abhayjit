@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 const Hero = () => {
   return (
-    <section className="min-h-screen relative overflow-hidden bg-gradient-to-b from-slate-900 to-slate-800">
+    <section id="home" className="min-h-screen relative overflow-hidden bg-gradient-to-b from-slate-900 to-slate-800">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:60px_60px]" />
       
