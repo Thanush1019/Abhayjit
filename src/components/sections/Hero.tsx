@@ -13,25 +13,25 @@ const Hero = () => {
       {/* Simple accent line */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-secondary via-brand-tertiary to-brand-secondary" />
       
-      <div className="relative container mx-auto px-4 py-24 sm:py-32">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="relative container mx-auto px-4 py-16 sm:py-24 md:py-32">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           
           {/* Text Content */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-center lg:text-left order-2 lg:order-1"
+            className="text-center lg:text-left order-2 lg:order-1 mt-8 lg:mt-0"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
             >
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6">
                 Abhayjit <span className="text-brand-secondary">Singh</span>
               </h1>
-              <h2 className="text-xl sm:text-2xl text-brand-tertiary mb-8 font-light tracking-wide">
+              <h2 className="text-lg sm:text-xl md:text-2xl text-brand-tertiary mb-4 sm:mb-8 font-light tracking-wide">
                 Chartered Accountant
               </h2>
             </motion.div>
@@ -40,7 +40,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.5 }}
-              className="text-xl text-white/90 mb-12 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+              className="text-base sm:text-lg md:text-xl text-white/90 mb-8 sm:mb-12 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
             >
               Specialized in Financial Analysis, Risk Management, and Strategic Business Development
             </motion.p>
@@ -49,17 +49,17 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.5 }}
-              className="space-x-6"
+              className="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-6"
             >
               <a
                 href="#contact"
-                className="inline-block px-8 py-4 bg-brand-secondary text-brand-dark font-semibold rounded-lg hover:bg-brand-secondary/90 transition-all duration-300 shadow-lg hover:shadow-brand-secondary/25 transform hover:-translate-y-1"
+                className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-brand-secondary text-brand-dark font-semibold rounded-lg hover:bg-brand-secondary/90 transition-all duration-300 shadow-lg hover:shadow-brand-secondary/25 transform hover:-translate-y-1 text-center"
               >
                 Get in Touch
               </a>
               <a
                 href="#services"
-                className="inline-block px-8 py-4 border-2 border-brand-tertiary text-brand-tertiary font-semibold rounded-lg hover:bg-brand-tertiary/10 transition-all duration-300 transform hover:-translate-y-1"
+                className="inline-block px-6 sm:px-8 py-3 sm:py-4 border-2 border-brand-tertiary text-brand-tertiary font-semibold rounded-lg hover:bg-brand-tertiary/10 transition-all duration-300 transform hover:-translate-y-1 text-center"
               >
                 View Services
               </a>
@@ -71,7 +71,7 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="relative w-full max-w-lg mx-auto order-1 lg:order-2"
+            className="relative w-full max-w-sm sm:max-w-md md:max-w-lg mx-auto order-1 lg:order-2"
           >
             <div className="aspect-square relative">
               {/* Simple border */}
@@ -86,7 +86,7 @@ const Hero = () => {
                   fill
                   className="object-cover object-center transform hover:scale-105 transition-transform duration-700"
                   priority
-                  sizes="(max-width: 768px) 80vw, (max-width: 1200px) 40vw, 33vw"
+                  sizes="(max-width: 640px) 80vw, (max-width: 768px) 60vw, (max-width: 1024px) 40vw, 33vw"
                 />
                 {/* Simple overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/30 to-transparent" />

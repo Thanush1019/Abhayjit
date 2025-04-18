@@ -12,7 +12,7 @@ const About = () => {
   ]
 
   return (
-    <section id="about" className="py-20 bg-brand-light relative">
+    <section id="about" className="py-16 sm:py-20 bg-brand-light relative">
       {/* Simple accent line */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-primary" />
       
@@ -22,13 +22,13 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="max-w-3xl mx-auto text-center mb-16"
+          className="max-w-3xl mx-auto text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-4xl font-bold text-brand-dark mb-4">About Me</h2>
-          <div className="w-24 h-1 bg-brand-secondary mx-auto mb-8 rounded-full" />
+          <h2 className="text-3xl sm:text-4xl font-bold text-brand-dark mb-3 sm:mb-4">About Me</h2>
+          <div className="w-20 sm:w-24 h-1 bg-brand-secondary mx-auto mb-6 sm:mb-8 rounded-full" />
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           {/* Image Section */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -49,6 +49,7 @@ const About = () => {
                   alt="Abhayjit Singh working"
                   fill
                   className="object-cover object-center hover:scale-105 transition-transform duration-700"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 {/* Simple overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/20 to-transparent" />
@@ -62,17 +63,17 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="space-y-6"
+            className="space-y-4 sm:space-y-6"
           >
-            <p className="text-xl text-brand-charcoal leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-brand-charcoal leading-relaxed">
               As a Chartered Accountant with extensive experience at KPMG, I specialize in providing comprehensive financial solutions and strategic guidance to businesses across various sectors.
             </p>
-            <p className="text-xl text-brand-charcoal leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-brand-charcoal leading-relaxed">
               My expertise spans financial analysis, risk management, and business development, enabling me to deliver valuable insights and drive sustainable growth for my clients.
             </p>
 
             {/* Enhanced Stats */}
-            <div className="grid grid-cols-3 gap-6 mt-12">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-8 sm:mt-12">
               {stats.map((stat, index) => (
                 <motion.div
                   key={stat.label}
@@ -80,12 +81,12 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.2, duration: 0.5 }}
-                  className="relative p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group"
+                  className="relative p-4 sm:p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group"
                 >
                   <div className="relative">
-                    <div className="text-3xl mb-3">{stat.icon}</div>
-                    <div className="text-3xl font-bold text-brand-primary mb-2 group-hover:text-brand-secondary transition-all duration-300">{stat.value}</div>
-                    <div className="text-sm text-brand-slate">{stat.label}</div>
+                    <div className="text-2xl sm:text-3xl mb-2 sm:mb-3">{stat.icon}</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-brand-primary mb-1 sm:mb-2 group-hover:text-brand-secondary transition-all duration-300">{stat.value}</div>
+                    <div className="text-xs sm:text-sm text-brand-slate">{stat.label}</div>
                   </div>
                 </motion.div>
               ))}
