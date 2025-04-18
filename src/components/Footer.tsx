@@ -2,15 +2,27 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FaLinkedinIn, FaTwitter, FaEnvelope } from 'react-icons/fa'
+import { FaLinkedinIn, FaWhatsapp, FaEnvelope } from 'react-icons/fa'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   const socialLinks = [
-    { name: 'LinkedIn', href: '#', icon: FaLinkedinIn },
-    { name: 'Twitter', href: '#', icon: FaTwitter },
-    { name: 'Email', href: 'mailto:contact@example.com', icon: FaEnvelope }
+    { 
+      name: 'LinkedIn', 
+      href: 'https://www.linkedin.com/in/abhayjit-singh/', 
+      icon: FaLinkedinIn 
+    },
+    {
+      name: 'WhatsApp',
+      href: 'https://wa.me/917340803706',
+      icon: FaWhatsapp
+    },
+    { 
+      name: 'Email', 
+      href: 'mailto:caabhayjit@gmail.com', 
+      icon: FaEnvelope 
+    }
   ]
 
   const quickLinks = [
@@ -82,22 +94,22 @@ const Footer = () => {
                 <span className="w-5 h-5 rounded-full bg-brand-primary/10 flex items-center justify-center">
                   <span className="w-1.5 h-1.5 rounded-full bg-brand-primary" />
                 </span>
-                <span>Mumbai, India</span>
+                <span>Ludhiana, Punjab, India</span>
               </li>
               <li>
-                <a href="tel:+1234567890" className="hover:text-brand-secondary transition-colors flex items-center space-x-2 group">
+                <a href="tel:+917340803706" className="hover:text-brand-secondary transition-colors flex items-center space-x-2 group">
                   <span className="w-5 h-5 rounded-full bg-brand-secondary/10 flex items-center justify-center group-hover:bg-brand-secondary/20">
                     <span className="w-1.5 h-1.5 rounded-full bg-brand-secondary" />
                   </span>
-                  <span>+91 1234567890</span>
+                  <span>+91 7340803706</span>
                 </a>
               </li>
               <li>
-                <a href="mailto:contact@example.com" className="hover:text-brand-tertiary transition-colors flex items-center space-x-2 group">
+                <a href="mailto:caabhayjit@gmail.com" className="hover:text-brand-tertiary transition-colors flex items-center space-x-2 group">
                   <span className="w-5 h-5 rounded-full bg-brand-tertiary/10 flex items-center justify-center group-hover:bg-brand-tertiary/20">
                     <span className="w-1.5 h-1.5 rounded-full bg-brand-tertiary" />
                   </span>
-                  <span>contact@example.com</span>
+                  <span>caabhayjit@gmail.com</span>
                 </a>
               </li>
             </ul>
